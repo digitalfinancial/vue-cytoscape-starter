@@ -162,6 +162,7 @@ export default {
           fit: true,
         },
       });
+      console.log('Loaded graph with %d nodes', cy.nodes().length);
     },
   },
 };
