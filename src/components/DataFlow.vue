@@ -6,7 +6,7 @@
     <h1>Data flow Graph</h1>
     <h4 v-if="loading">Loading</h4>
     <h4 v-if="error" class="text-danger">{{ error }}</h4>
-    <div id="cy" class="cy"></div>
+    <div id="cy"></div>
   </div>
 </template>
 
@@ -162,18 +162,25 @@ export default {
           fit: true,
         },
       });
+        cy.resize();
       console.log('Loaded graph with %d nodes', cy.nodes().length);
     },
   },
 };
 </script>
-<style lang="scss">
-#container {
-  height: 600px;
-  width: 960px;
+<style lang="scss" scoped>
+ h1 {
+     text-align: center;
+ }
+ #container {
+    height: 600px;
+    width: 100vw;
 }
-#cy {
-  height: 600px;
-  width: 960px;
-}
+ #cy {
+     canvas {
+         left: 0px;
+     }     
+     height:100%;
+     width: 100%;
+ }
 </style>
